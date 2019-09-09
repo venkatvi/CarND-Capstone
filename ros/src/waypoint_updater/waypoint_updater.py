@@ -46,7 +46,7 @@ class WaypointUpdater(object):
     def run(self):
         rate = rospy.Rate(10)
         while not rospy.is_shutdown():
-            if not None in (self.pose, self.base_waypoints): 
+            if not None in (self.pose, self.base_waypoints, self.waypoint_tree): 
                 self.publish_waypoints()
                 
             rate.sleep()
